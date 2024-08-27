@@ -35,7 +35,7 @@ const Login = () => {
 
     const validateField = (name, value) => {
         const parsed = loginSchema.safeParse({ ...input, [name]: value });
-        console.log(parsed);
+        
         
 
         if (!parsed.success) {
@@ -86,11 +86,13 @@ const Login = () => {
 
 
             if (res.data.success) {
+                toast.success(res.data.msg);
+
                 dispatch(setUser(res.data.user));
 
 
 
-                toast.success(res.data.msg);
+                
             }
 
         } catch (e) {
