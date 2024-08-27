@@ -3,6 +3,8 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
+import dotenv from 'dotenv';
+dotenv.config({});
 
 export const register = async (req, res) => {
   try {
@@ -134,7 +136,7 @@ export const login = async (req, res) => {
       .cookie("jwtToken", token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        secure:process.env.NODE_ENV === 'production',
+        secure:process.env.NODE_ENV || 'production' === 'production',
         sameSite: "None",
       })
       .json({
@@ -151,7 +153,7 @@ export const logout = async (req, res) => {
   try {
     res.clearCookie('jwtToken',{
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: process.env.NODE_ENV || 'production' === 'production',
       sameSite: 'None',
       path:'/'
     });
