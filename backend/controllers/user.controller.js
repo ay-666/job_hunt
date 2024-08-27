@@ -134,7 +134,7 @@ export const login = async (req, res) => {
       .cookie("jwtToken", token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "None",
       })
       .json({
         msg: "Welcome back," + user.fullname,
@@ -151,7 +151,7 @@ export const logout = async (req, res) => {
     res.clearCookie('jwtToken',{
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: 'None',
       path:'/'
     });
     return res.status(200).json({
