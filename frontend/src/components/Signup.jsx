@@ -41,7 +41,7 @@ const Signup = () => {
 
     const validateField = (name, value) => {
         const parsed = signupSchema.safeParse({ ...input, [name]: value });
-        console.log(parsed);
+        
         
 
         if (!parsed.success) {
@@ -108,7 +108,7 @@ const Signup = () => {
             }
         } catch (e) {
             console.log(e);
-            toast.error(e.response.data.msg);
+            toast.error(e.response.data.msg ||"server error");
         } finally {
             dispatch(setLoading(false));
         }
