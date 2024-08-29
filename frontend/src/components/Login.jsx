@@ -69,13 +69,17 @@ const Login = () => {
         e.preventDefault();
 
         const parsed = loginSchema.safeParse(input);
+        
+        
         if(!parsed.success){
-            setInputError(parsed.error.issues[0]);
+            const fieldError = parsed.error.issues[0];
+            setInputError(fieldError ? fieldError.message : "");
             return ;
         }
 
         try {
             dispatch(setLoading(true));
+            
             const res = await axios.post(`${USER_API_END_POINT}/login`, input, {
 
                 headers: {
