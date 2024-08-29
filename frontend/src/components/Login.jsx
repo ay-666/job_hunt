@@ -97,7 +97,7 @@ const Login = () => {
 
         } catch (e) {
             console.log(e);
-            toast.error(e.response.data.msg ||"server error");
+            toast.error(e?.response?.data?.msg ||"server error");
         } finally {
             dispatch(setLoading(false));
         }
