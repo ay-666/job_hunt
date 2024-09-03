@@ -5,9 +5,13 @@ import LatestJobs from "./LatestJobs";
 import Footer from "./Footer";
 import useGetAllJobs from "@/hooks/useGetAllJobs";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 const Home = () => {
 
     useGetAllJobs();
+    useEffect(()=>{
+        console.log('API URL:', process.env.REACT_APP_API_URL);
+    },[]);
 
     return (<div>
         <Navbar />
