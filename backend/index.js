@@ -49,11 +49,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Handle routing, send all other requests to index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
 
 
