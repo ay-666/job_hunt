@@ -109,10 +109,10 @@ const Login = () => {
     }
     return (<div>
         <Navbar />
-        <div className="flex items-center justify-center mx-auto max-w-7xl">
-            <form onSubmit={handleSubmit} className="w-1/2 border border-gray-200 rounded-md p-5 my-10">
+        <div className="flex  items-center justify-center mx-auto max-w-7xl p-4 sm:p-0">
+            <form onSubmit={handleSubmit} className= "  h-auto w-full sm:w-3/4 md:w-2/3 lg:w-1/2 grid grid-rows gap-8 sm:gap-5 md:gap-2 p-5 border border-gray-200 rounded-md  my-10">
                 <h1 className="font-bold text-xl mb-5">Login</h1>
-                <div>
+                <div className="">
                     <Label>Email</Label>
                     <Input type='email' onChange={changeEventHandler} name="email" placeholder="Jonh@email.com"></Input>
                     {inputError && <p className="text-red-500 text-sm">{inputError}</p>}
@@ -143,7 +143,9 @@ const Login = () => {
 
 
 
-                <span className="text-sm">Don't have an account? </span> <Link to="/signup" className="text-blue-500">Signup</Link>
+                <div className="flex flex-col">
+                <span className="text-sm">Don't have an account? </span> <Link to="/signup" className="text-blue-600 font-medium">Signup</Link>
+                </div>
             </form>
         </div>
     </div>);

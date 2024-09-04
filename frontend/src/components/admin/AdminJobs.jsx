@@ -26,7 +26,7 @@ const AdminJobs = () => {
         <Navbar />
 
         <div className="max-w-7xl mx-auto my-10 ">
-            <div className="flex justify-between items-center my-5">
+            <div className="flex justify-between items-center my-5 px-2">
                 <Input type="text" className="w-fit" onChange={(e)=>{setSearchInput(e.target.value)}} placeholder="Filter by company, role"/>
                 <Button onClick={()=>{
                     companies.length > 0 ? navigate('/admin/jobs/post') : toast.error("Register a company first");

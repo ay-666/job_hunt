@@ -43,7 +43,7 @@ const CompaniesTable = () => {
                             {filterCompany.map((company) => {
                                 const initials = useInitials(company.name);
                                 return (
-                                    <TableRow key={company._id}>
+                                    <TableRow key={company._id} className="text-xs sm:text-sm">
                                         <TableCell>
                                             <Avatar className="border border-slate-700 flex items-center justify-center">
                                                 <AvatarImage src={company.logo} />

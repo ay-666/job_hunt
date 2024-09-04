@@ -23,11 +23,11 @@ const JobCard = ({ job }) => {
     const intitials = useInitials(job?.company?.name);
     
     
-    return (<div className="p-5 rounded-md shadow-lg bg-white border border-gray-200">
+    return (<div className="p-4 scale-75 xs:scale-90 sm:scale-100  rounded-md shadow-lg bg-white border border-gray-200">
 
         <div className="flex justify-between items-center">
             <p className="text-sm text-gray-500">{calculateDaysAgo(job?.createdAt) === 0 ? "Today" : `${calculateDaysAgo(job?.createdAt)} days ago` } </p>
-            <Button variant="outline" className="rounded-full" size="icon"><Bookmark /></Button>
+            {/* <Button variant="outline" className="rounded-full" size="icon"><Bookmark /></Button> */}
         </div>
         <div className="flex items-center gap-2 my-2">
 

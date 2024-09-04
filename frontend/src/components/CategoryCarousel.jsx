@@ -16,15 +16,16 @@ const CategoryCarousel = () => {
         }
 
 
-    return (<div className="flex justify-center  items-center my-20 ">
+    return (
+    <div className="flex justify-center mx-auto  items-center my-20 ">
         <Carousel opts={{
             align: "start",
             loop: true,
         }} plugins={[Autoplay({delay:2000})]} 
-        className="max-w-xl mx-auto " >
-            <CarouselContent className="mx-auto flex justify-around">
+        className="max-w-[200px] md:max-w-md lg:max-w-xl  " >
+            <CarouselContent className="mx-auto ">
                 {category.map((item,index) => {
-                    return <CarouselItem key={index} className="basis-1/2  lg:basis-1/3 text-lg"><Button onClick={()=>{searchHandler(item)}} variant="outline"  
+                    return <CarouselItem key={index} className="  md:basis-1/2 lg:basis-1/3  text-sm lg:text-lg "><Button onClick={()=>{searchHandler(item)}} variant="outline"  
                     className="rounded-full bg-purple-100 hover:bg-purple-300">
                         {item}</Button></CarouselItem>
                 })}

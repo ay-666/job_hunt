@@ -76,7 +76,7 @@ function UpdateProfileDialog({ open, setOpen }) {
     return (
         <div>
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogContent className="sm:max-w-[425px]" >
+                <DialogContent className="sm:max-w-[425px] m-2" >
                     <DialogHeader>
                         <DialogTitle>Update Profile</DialogTitle>
                     </DialogHeader>

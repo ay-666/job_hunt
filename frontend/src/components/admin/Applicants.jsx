@@ -22,7 +22,7 @@ const Applicants = () => {
   return (
     <div>
         <Navbar/>
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto px-2'>
             <h1 className='text-xl my-5 font-bold'>Applicants ({applicants?.length})</h1>
             <ApplicantsTable loading={loading} jobId ={params.id} />
         </div>

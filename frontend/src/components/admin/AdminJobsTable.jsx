@@ -95,7 +95,7 @@ const AdminJobsTable = () => {
                             filterJobs.map((job) => {
 
                                 return (
-                                    <TableRow key={job._id}>
+                                    <TableRow key={job._id} className="text-xs sm:text-sm">
 
                                         <TableCell>{job?.company?.name}</TableCell>
                                         <TableCell>{job?.title}</TableCell>

@@ -50,18 +50,18 @@ const Navbar = () => {
 
         } catch (e) {
             console.log(e);
-            toast.error(e.response.data.msg);
+            toast.error(e?.response?.data?.msg);
 
         }
     }
 
  
 
-    return <div className="bg-blue-400">
-        <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
-            <div><h1 className="text-2xl font-bold">Job<span className="text-red-500" >Portal</span></h1></div>
-            <div className="flex  items-center gap-14">
-                <ul className="flex font-bold  h-full items-center gap-5 ">
+    return <div className="bg-blue-400 ">
+        <div className="gap-1  grid grid-rows-2   sm:flex  sm:items-center sm:justify-between px-2 pb-3 sm:pb-0 mx-auto max-w-7xl h-16">
+            <div><h1 className=" text-lg md:text-xl lg:text-2xl font-bold">Job<span className="text-red-500" >Portal</span></h1></div>
+            <div className="flex  xs:flex-row items-center justify-between sm:justify-start gap-5 md:gap-14">
+                <ul className="flex font-bold text-sm md:text-md  h-full items-center gap-5 ">
                     {
                         user && user.role === 'recruiter' ? (
                             <>
@@ -78,8 +78,8 @@ const Navbar = () => {
                 </ul>
 
                 {!user ? (<div className=" flex items-center gap-2">
-                    <Link to='/login'><Button variant="outline">Login</Button></Link>
-                    <Link to='/signup'><Button className="bg-purple-800 hover:bg-purple-900">Signup</Button> </Link>
+                    <Link to='/login'><Button className="size-10 xs:size-full xs:text-sm text-xs" variant="outline">Login</Button></Link>
+                    <Link to='/signup'><Button className="size-10 xs:size-full xs:text-sm text-xs bg-purple-800 hover:bg-purple-900">Signup</Button> </Link>
 
 
                 </div>) : (<Popover >
@@ -89,8 +89,8 @@ const Navbar = () => {
                             <AvatarFallback>{initials}</AvatarFallback>
                         </Avatar>
                     </PopoverTrigger>
-                    <PopoverContent className="max-w-72 mx-1 ">
-                        <div className="flex gap-2 ">
+                    <PopoverContent className="max-w-40 md:max-w-72 mx-1 ">
+                        <div className="flex gap-2 items-center ">
                             <Avatar className="cursor-pointer">
                                 <AvatarImage src={user?.profile?.profilePic} alt="profile_img" />
                                 <AvatarFallback >{initials}</AvatarFallback>

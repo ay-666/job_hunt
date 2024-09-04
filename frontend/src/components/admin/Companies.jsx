@@ -21,7 +21,7 @@ const Companies = () => {
     return (<div>
         <Navbar />
 
-        <div className="max-w-7xl mx-auto my-10 ">
+        <div className="max-w-7xl mx-auto my-10 text px-2">
             <div className="flex justify-between items-center my-5">
                 <Input type="text" className="w-fit" onChange={(e)=>{setSearchInput(e.target.value)}} placeholder="Filter by name"/>
                 <Button onClick={()=>{navigate('/admin/company/register')}}>New Company</Button>

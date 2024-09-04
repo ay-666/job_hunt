@@ -11,17 +11,18 @@ const Home = () => {
     useGetAllJobs();
     
 
-    return (<div>
+    return (<div className="grid grid-rows-[auto,1fr,auto] min-h-screen" >
         <Navbar />
-        <motion.div initial={{ y: 100, opacity: 0 }}
+        <motion.div className=" " initial={{ y: 100, opacity: 0 }}
             
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}>
             <HeroSection />
             <CategoryCarousel />
             <LatestJobs />
-            <Footer />
+            
         </motion.div>
+        <Footer />
 
     </div>);
 }

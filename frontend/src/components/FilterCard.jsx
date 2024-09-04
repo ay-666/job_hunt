@@ -39,12 +39,12 @@ function FilterCard() {
         {
           filterData.map((data,ind)=>{
             return (<div key={ind}>
-              <h1 className='font-bold text-lg'>{data.filterType}</h1>
+              <h1 className='font-bold  sm:text-lg'>{data.filterType}</h1>
               {
                 data.filters.map((item,index)=>{
                   return (<div key={index} className='flex items-center my-2 space-x-2'>
                     <RadioGroupItem value={item } id={index} />
-                    <Label>{item}</Label>
+                    <Label className="text-xs xs:text-sm md:text-base" >{item}</Label>
                   </div>);
                 })
               }

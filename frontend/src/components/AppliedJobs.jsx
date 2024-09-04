@@ -20,7 +20,7 @@ function AppliedJobs() {
     //     },  
     // ]
   return (
-    <div>
+    <div className=''>
         <Table>
             <TableCaption>List of applied Jobs
             </TableCaption>
@@ -32,7 +32,7 @@ function AppliedJobs() {
                 <TableHead className="text-right">Status</TableHead>
             </TableRow>
             </TableHeader>
-            <TableBody>
+            <TableBody className="text-xs sm:text-sm">
                 {
                     appliedJobs.map((item,index)=>{
                         return (<TableRow key={item._id}>

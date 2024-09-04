@@ -118,8 +118,8 @@ const Signup = () => {
 
     return (<div>
         <Navbar />
-        <div className="flex items-center    justify-center mx-auto max-w-7xl">
-            <form onSubmit={submitHandler} className="w-1/2  border border-gray-200 rounded-md p-5 my-10">
+        <div className="flex items-center    justify-center mx-auto max-w-7xl  p-4 sm:p-0">
+            <form onSubmit={submitHandler} className="h-auto w-full sm:w-3/4 md:w-2/3 lg:w-1/2 grid grid-rows gap-8 sm:gap-5 md:gap-2 transition-all border border-gray-200 rounded-md p-5 my-10">
                 <h1 className="font-bold text-xl mb-5">Signup Here</h1>
                 <div>
                     <Label>Full Name</Label>
@@ -141,7 +141,7 @@ const Signup = () => {
                     <Input type='password' name="password" onChange={changeEventHandler} placeholder="Password"></Input>
                     {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col md:gap-2 md:flex-row md:items-center justify-between">
                     <RadioGroup onValueChange={(val) => { setInput({ ...input, role: val }) }} name="role" className="flex gap-4  my-5" defaultValue="student">
                         <div className="flex items-center space-x-2">
                             <RadioGroupItem value="student" id="option-one" />
@@ -164,7 +164,9 @@ const Signup = () => {
                     loading ? <Button className="my-5 w-full" ><Loader2 className="mr-2 h-4 w-4 animate-spin" />Please Wait</Button> :
                         <Button type="Submit" className="my-5 w-full">Signup</Button>
                 }
-                <span className="text-sm">Already have an account? </span> <Link to="/login" className="text-blue-500">Login</Link>
+               <div className="flex flex-col">
+               <span className="text-sm">Already have an account? </span> <Link to="/login" className="text-blue-600 font-medium">Login</Link>
+               </div>
             </form>
         </div>
     </div>);
