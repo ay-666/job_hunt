@@ -34,7 +34,7 @@ function UpdateProfileDialog({ open, setOpen }) {
         formData.append("fullname", input.fullname);
         formData.append("email", input.email);
         formData.append("phoneNumber", input.phoneNumber);
-        formData.append("bio", input.bio);
+        formData.append("bio", input.bio || "{bio}");
         formData.append("skills", input.skills);
         if (input.file) {
             formData.append("file", input.file);
