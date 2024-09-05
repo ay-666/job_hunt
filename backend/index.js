@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: '*',
+    origin: ['http://localhost:3000', 'https://job-hunt-9fpr.onrender.com'],
     credentials:true
 }
 app.use(cors(corsOptions));
